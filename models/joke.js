@@ -6,6 +6,10 @@ const joke = sequelize.define("Joke", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  answer: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
 });
 
 module.exports = joke;

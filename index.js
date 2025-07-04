@@ -1,9 +1,13 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const sequelize = require("./config/database");
 const Joke = require("./models/joke");
 const swaggerUI = require("swagger-ui-express");
 const swaggerDocument = require("./swagger.json");
+
+// --- ACTIVE CORS ---
+app.use(cors());
 
 // Middlewares
 app.use(express.json()); // pour lire le JSON du body
