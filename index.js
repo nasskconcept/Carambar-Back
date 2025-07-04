@@ -1,5 +1,17 @@
+const express = require("express");
+const app = express();
 const sequelize = require("./config/database");
 const Joke = require("./models/joke");
+const swaggerUI = require("swagger-ui-express");
+const swaggerDocument = require("./swagger.json");
+
+// Middlewares
+app.use(express.json()); // pour lire le JSON du body
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
+
+// Import et utilisation des routes
+const blagueRoutes = require("./routes/blagueRoutes");
+app.use("/api/v1/blagues", blagueRoutes);
 
 sequelize
   .sync()
@@ -53,3 +65,8 @@ sequelize
   .catch((err) => {
     console.error("Erreur lors de la synchro BDD", err);
   });
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log("Serveur démarré sur le port", PORT);
+});

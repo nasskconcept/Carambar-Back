@@ -1,0 +1,88 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Blagues Carambar & Co",
+        "version": "1.0.0",
+        "description,": "Une mini API pour stocker et récupérer des blagues Carambar !"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000/api/v1"
+        }
+    ],
+    "paths": {
+        "/blagues": {
+        "get": {
+            "summary": "Liste toutes les blagues",
+            "responses": {
+                "200": {
+                    "description": "Liste des blagues"
+                }
+            }
+        },
+        "post": {
+            "summary": "Ajoute une blague",
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "question": { "type": "string" },
+                                "answer": { "type": "string" }
+                            }
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "201": {
+                    "description": "Blague ajoutée"
+                }
+            }
+        }
+    },
+    "/blagues/{id}": {
+        "get": {
+            "summary": "Récupère une blague par son ID",
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "schema": { "type": "integer"}
+                }
+            ],
+            "responses": {
+                "200": { "description": "Une blague" },
+                "404": { "description": "Une blague au hasard" }
+            }        
+        }
+    },
+    "/blagues/random": {
+  "get": {
+    "summary": "Récupère une blague aléatoire",
+    "responses": {
+      "200": {
+        "description": "Une blague au hasard",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": { "type": "integer" },
+                "question": { "type": "string" },
+                "answer": { "type": "string" },
+                "createdAt": { "type": "string", "format": "date-time" },
+                "updatedAt": { "type": "string", "format": "date-time" }
+              }
+            }
+        }
+    }
+}
+    }
+}
+    }
+}
+}
