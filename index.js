@@ -17,6 +17,11 @@ app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 const blagueRoutes = require("./routes/blagueRoutes");
 app.use("/api/v1/blagues", blagueRoutes);
 
+// Route racine pour éviter "CANNOT GET /"
+app.get("/", (req, res) => {
+  res.send("Bienvenue sur l'API Carambar & Co 🍬 ! Consultez /api-docs pour la documentation.");
+});
+
 sequelize
   .sync()
   .then(async () => {
