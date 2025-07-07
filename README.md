@@ -1,8 +1,12 @@
 ﻿API Blagues Carambar & Co
 Une mini API RESTful pour stocker, ajouter et récupérer des blagues façon Carambar, utilisable depuis une appli web ou mobile.
 
-méthodologie trello :![screen-brief-api](https://github.com/user-attachments/assets/1cbc388f-f97f-4431-82bd-511f1f8957b6)
-![screen-brief-api2](https://github.com/user-attachments/assets/4a255527-c22f-477b-8833-53b9c1b8e8c7)
+<h3>Méthodologie Trello</h3>
+
+<img src="https://github.com/user-attachments/assets/1cbc388f-f97f-4431-82bd-511f1f8957b6" alt="screen-brief-api" width="600" />
+<br>
+<img src="https://github.com/user-attachments/assets/4a255527-c22f-477b-8833-53b9c1b8e8c7" alt="screen-brief-api2" width="600" />
+
 
 
 
