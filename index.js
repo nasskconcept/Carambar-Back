@@ -7,7 +7,9 @@ const swaggerUI = require("swagger-ui-express");
 const swaggerDocument = require("./swagger.json");
 
 // --- ACTIVE CORS ---
-app.use(cors());
+app.use(cors({
+  origin: "https://nasskconcept.github.io"
+}));
 
 // Middlewares
 app.use(express.json()); // pour lire le JSON du body
